@@ -1,0 +1,1034 @@
+﻿
+/* =========================================================
+   SAQLAIN PORTFOLIO — FINAL VISUAL FIX
+   ========================================================= */
+
+/* ---------- PROJECT PREVIEWS ---------- */
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  background: #eef3f7;
+  min-height: 420px;
+}
+
+.project-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .45s ease, filter .45s ease;
+}
+
+.project:hover .project-image img {
+  transform: scale(1.025);
+}
+
+.project-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,.12),
+    transparent 45%,
+    rgba(0,210,255,.06)
+  );
+}
+
+/* ---------- THE STACK / SKILLS ---------- */
+
+.skill-item {
+  position: relative;
+  overflow: hidden;
+  min-height: 190px;
+  padding: 30px;
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease,
+    background .3s ease;
+}
+
+.skill-item::before {
+  content: "";
+  position: absolute;
+  top: 26px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: 800;
+  color: #0b1520;
+  background: linear-gradient(135deg,#24d5f5,#a7f3ff);
+  box-shadow: 0 10px 30px rgba(20,200,240,.18);
+}
+
+.skill-item:nth-child(1)::before { content: "⚛"; }
+.skill-item:nth-child(2)::before { content: "JS"; font-size:18px; }
+.skill-item:nth-child(3)::before { content: "TS"; font-size:18px; }
+.skill-item:nth-child(4)::before { content: "HTML"; font-size:12px; }
+.skill-item:nth-child(5)::before { content: "#"; }
+.skill-item:nth-child(6)::before { content: "Py"; font-size:18px; }
+.skill-item:nth-child(7)::before { content: "API"; font-size:14px; }
+.skill-item:nth-child(8)::before { content: "AI"; }
+.skill-item:nth-child(9)::before { content: "DB"; font-size:16px; }
+.skill-item:nth-child(10)::before { content: "Git"; font-size:15px; }
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(20,200,240,.5);
+  box-shadow: 0 18px 45px rgba(15,35,55,.08);
+}
+
+/* ---------- METHOD / PROCESS CARDS ---------- */
+
+.method-card,
+.process-card,
+.method-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.method-card::before,
+.process-card::before,
+.method-item::before {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 28px;
+  border-radius: 18px;
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(135deg,#e7fbff,#dce8ff);
+  box-shadow: 0 12px 30px rgba(30,190,240,.12);
+}
+
+.method-card:nth-child(1)::before,
+.process-card:nth-child(1)::before,
+.method-item:nth-child(1)::before { content:"⌕"; }
+
+.method-card:nth-child(2)::before,
+.process-card:nth-child(2)::before,
+.method-item:nth-child(2)::before { content:"⌘"; }
+
+.method-card:nth-child(3)::before,
+.process-card:nth-child(3)::before,
+.method-item:nth-child(3)::before { content:"⚡"; }
+
+.method-card:nth-child(4)::before,
+.process-card:nth-child(4)::before,
+.method-item:nth-child(4)::before { content:"✦"; }
+
+.method-card:nth-child(5)::before,
+.process-card:nth-child(5)::before,
+.method-item:nth-child(5)::before { content:"✓"; }
+
+.method-card:nth-child(6)::before,
+.process-card:nth-child(6)::before,
+.method-item:nth-child(6)::before { content:"↗"; }
+
+/* ---------- FOOTER CLEANUP ---------- */
+
+/* hide generic/fake duplicate links */
+footer a[href="https://github.com/"],
+footer a[href="https://linkedin.com/"] {
+  display: none !important;
+}
+
+/* keep only the real contact destinations visually strong */
+footer a[href*="linkedin.com/in/"],
+footer a[href*="github.com/Saqlainkhan12"],
+footer a[href*="wa.me/"] {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid rgba(20,200,240,.18);
+  border-radius: 999px;
+  transition: all .25s ease;
+}
+
+footer a[href*="linkedin.com/in/"]:hover,
+footer a[href*="github.com/Saqlainkhan12"]:hover,
+footer a[href*="wa.me/"]:hover {
+  transform: translateY(-2px);
+  border-color: #18c9ed;
+  background: rgba(24,201,237,.08);
+}
+
+footer a[href*="wa.me/"]::before {
+  content: "◉";
+}
+
+footer a[href*="linkedin.com/in/"]::before {
+  content: "in";
+  font-weight: 800;
+}
+
+footer a[href*="github.com/Saqlainkhan12"]::before {
+  content: "◉";
+}
+
+footer a[href*="#"] {
+  transition: transform .25s ease;
+}
+
+footer a[href*="#"]:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+  .project-image,
+  .project-image img {
+    min-height: 330px;
+  }
+
+  .skill-item {
+    min-height: 165px;
+    padding: 24px;
+  }
+
+  .skill-item::before {
+    width: 48px;
+    height: 48px;
+    top: 20px;
+    right: 20px;
+    border-radius: 14px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-image,
+  .project-image img {
+    min-height: 250px;
+  }
+
+  .skill-item {
+    min-height: 145px;
+    padding: 20px;
+  }
+
+  .skill-item::before {
+    width: 42px;
+    height: 42px;
+    top: 16px;
+    right: 16px;
+    border-radius: 12px;
+    font-size: 17px;
+  }
+
+  .project-image img {
+    object-fit: cover;
+  }
+
+  footer a[href*="linkedin.com/in/"],
+  footer a[href*="github.com/Saqlainkhan12"],
+  footer a[href*="wa.me/"] {
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   FINAL SKILLS CARD REPAIR
+   Removes broken "/" marks + overlapping labels
+   ========================================================= */
+
+.skill-item {
+  position: relative !important;
+  min-height: 205px !important;
+  padding: 30px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  overflow: hidden !important;
+}
+
+/* Remove the old "/" visual */
+.skill-item > span:first-child,
+.skill-item .skill-icon,
+.skill-item .skill-mark {
+  display: none !important;
+}
+
+/* New proper icon */
+.skill-item::before {
+  content: "✦" !important;
+  position: absolute !important;
+  top: 26px !important;
+  left: 28px !important;
+  width: 58px !important;
+  height: 58px !important;
+  display: grid !important;
+  place-items: center !important;
+  margin: 0 !important;
+  border-radius: 16px !important;
+  font-size: 23px !important;
+  font-weight: 800 !important;
+  color: #07151d !important;
+  background: linear-gradient(135deg,#20d4f4,#b8f5ff) !important;
+  box-shadow: 0 12px 28px rgba(20,190,230,.16) !important;
+}
+
+/* Different icon for each technology */
+.skill-item:nth-child(1)::before { content: "⚛" !important; }
+.skill-item:nth-child(2)::before { content: "JS" !important; font-size:17px !important; }
+.skill-item:nth-child(3)::before { content: "TS" !important; font-size:17px !important; }
+.skill-item:nth-child(4)::before { content: "H5" !important; font-size:16px !important; }
+.skill-item:nth-child(5)::before { content: "#" !important; }
+.skill-item:nth-child(6)::before { content: "Py" !important; font-size:17px !important; }
+.skill-item:nth-child(7)::before { content: "AI" !important; font-size:17px !important; }
+.skill-item:nth-child(8)::before { content: "ML" !important; font-size:15px !important; }
+.skill-item:nth-child(9)::before { content: "Git" !important; font-size:14px !important; }
+.skill-item:nth-child(10)::before { content: "VS" !important; font-size:16px !important; }
+.skill-item:nth-child(11)::before { content: "DB" !important; font-size:15px !important; }
+
+/* Skill name */
+.skill-item h3 {
+  position: relative !important;
+  z-index: 2 !important;
+  margin: 0 0 10px !important;
+  font-size: 23px !important;
+  line-height: 1.1 !important;
+}
+
+/* Category */
+.skill-item .skill-category {
+  position: relative !important;
+  z-index: 2 !important;
+  margin: 0 !important;
+  font-size: 12px !important;
+  letter-spacing: .12em !important;
+}
+
+/* Remove duplicate CORE SKILL text */
+.skill-item .skill-label,
+.skill-item .skill-badge {
+  display: none !important;
+}
+
+/* If CORE SKILL is a plain last span, make it clean */
+.skill-item > span:last-child {
+  position: relative !important;
+  z-index: 2 !important;
+  margin-top: 8px !important;
+  color: #18c9ed !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: .14em !important;
+}
+
+/* Hover */
+.skill-item:hover::before {
+  transform: translateY(-3px) scale(1.04) !important;
+  box-shadow: 0 16px 35px rgba(20,190,230,.24) !important;
+}
+
+.skill-item::before {
+  transition: transform .25s ease, box-shadow .25s ease !important;
+}
+
+/* Laptop */
+@media (max-width: 1100px) {
+  .skill-item {
+    min-height: 185px !important;
+    padding: 24px !important;
+  }
+
+  .skill-item::before {
+    left: 24px !important;
+    top: 22px !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .skill-item h3 {
+    font-size: 20px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .skill-item {
+    min-height: 160px !important;
+    padding: 20px !important;
+  }
+
+  .skill-item::before {
+    left: 20px !important;
+    top: 18px !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 13px !important;
+    font-size: 17px !important;
+  }
+
+  .skill-item h3 {
+    font-size: 19px !important;
+  }
+}
+
+
+/* =========================================================
+   SAQLAIN MUSHTAQ — FINAL POLISH / REMAINING ISSUES
+   ========================================================= */
+
+/* ---------- GLOBAL SPACING ---------- */
+
+.section {
+  overflow: hidden;
+}
+
+.section-heading {
+  margin-bottom: 55px !important;
+}
+
+/* ---------- HERO TYPOGRAPHY ---------- */
+
+.hero h1,
+.hero-title,
+.hero-heading {
+  font-size: clamp(58px, 7.2vw, 118px) !important;
+  line-height: .88 !important;
+  letter-spacing: -.055em !important;
+  max-width: 850px !important;
+}
+
+.hero p,
+.hero-description {
+  max-width: 680px !important;
+  font-size: clamp(16px, 1.35vw, 21px) !important;
+  line-height: 1.65 !important;
+}
+
+/* ---------- HERO MOBILE ---------- */
+
+@media (max-width: 900px) {
+  .hero h1,
+  .hero-title,
+  .hero-heading {
+    font-size: clamp(52px, 9vw, 82px) !important;
+    line-height: .92 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1,
+  .hero-title,
+  .hero-heading {
+    font-size: clamp(43px, 13vw, 64px) !important;
+    line-height: .94 !important;
+    letter-spacing: -.045em !important;
+  }
+
+  .hero p,
+  .hero-description {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+  }
+}
+
+/* ---------- METHOD SECTION ---------- */
+
+.method-grid,
+.process-grid,
+.method-list {
+  min-height: 0 !important;
+}
+
+.method-card,
+.process-card,
+.method-item {
+  min-height: 260px !important;
+  padding: 34px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* remove excessive empty top area */
+.method-card::before,
+.process-card::before,
+.method-item::before {
+  position: absolute !important;
+  top: 30px !important;
+  left: 30px !important;
+  margin: 0 !important;
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 16px !important;
+  background: linear-gradient(135deg,#e5fbff,#dce9ff) !important;
+  color: #08bde5 !important;
+  font-size: 24px !important;
+}
+
+/* six meaningful process icons */
+.method-card:nth-child(1)::before,
+.process-card:nth-child(1)::before,
+.method-item:nth-child(1)::before {
+  content: "01" !important;
+}
+
+.method-card:nth-child(2)::before,
+.process-card:nth-child(2)::before,
+.method-item:nth-child(2)::before {
+  content: "02" !important;
+}
+
+.method-card:nth-child(3)::before,
+.process-card:nth-child(3)::before,
+.method-item:nth-child(3)::before {
+  content: "03" !important;
+}
+
+.method-card:nth-child(4)::before,
+.process-card:nth-child(4)::before,
+.method-item:nth-child(4)::before {
+  content: "✦" !important;
+}
+
+.method-card:nth-child(5)::before,
+.process-card:nth-child(5)::before,
+.method-item:nth-child(5)::before {
+  content: "✓" !important;
+}
+
+.method-card:nth-child(6)::before,
+.process-card:nth-child(6)::before,
+.method-item:nth-child(6)::before {
+  content: "↗" !important;
+}
+
+.method-card h3,
+.process-card h3,
+.method-item h3 {
+  margin-bottom: 10px !important;
+}
+
+/* ---------- SKILLS CLEANUP ---------- */
+
+.skill-item {
+  min-height: 190px !important;
+  padding: 28px !important;
+}
+
+.skill-item > span:first-child {
+  display: none !important;
+}
+
+/* Hide accidental duplicate CORE SKILL if rendered twice */
+.skill-item .skill-label,
+.skill-item .skill-badge {
+  display: none !important;
+}
+
+/* category stays readable */
+.skill-item h3 {
+  margin-bottom: 9px !important;
+}
+
+.skill-item .skill-category {
+  opacity: .72;
+}
+
+/* ---------- PROJECT SECTION ---------- */
+
+.project {
+  margin-bottom: 80px !important;
+}
+
+.project-image {
+  min-height: 390px !important;
+  border-radius: 28px !important;
+}
+
+.project-image img {
+  min-height: 390px !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.project-content h3 {
+  font-size: clamp(42px, 5vw, 76px) !important;
+  line-height: .92 !important;
+  letter-spacing: -.045em !important;
+}
+
+.project-content p {
+  max-width: 620px !important;
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+  padding-top: 70px !important;
+  padding-bottom: 35px !important;
+}
+
+footer a[href="https://github.com/"],
+footer a[href="https://linkedin.com/"],
+footer a[href="https://github.com"],
+footer a[href="https://linkedin.com"] {
+  display: none !important;
+}
+
+footer a[href*="linkedin.com/in/"],
+footer a[href*="github.com/Saqlainkhan12"],
+footer a[href*="wa.me/"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  min-height: 42px !important;
+  padding: 9px 16px !important;
+  border: 1px solid rgba(20,190,230,.25) !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  transition: all .25s ease !important;
+}
+
+footer a[href*="linkedin.com/in/"]::before {
+  content: "in" !important;
+  font-weight: 900 !important;
+  font-size: 14px !important;
+}
+
+footer a[href*="github.com/Saqlainkhan12"]::before {
+  content: "◉" !important;
+  font-size: 13px !important;
+}
+
+footer a[href*="wa.me/"]::before {
+  content: "✆" !important;
+  font-size: 16px !important;
+}
+
+footer a[href*="linkedin.com/in/"]:hover,
+footer a[href*="github.com/Saqlainkhan12"]:hover,
+footer a[href*="wa.me/"]:hover {
+  transform: translateY(-3px) !important;
+  border-color: #16c9ed !important;
+  box-shadow: 0 10px 28px rgba(20,190,230,.13) !important;
+}
+
+/* ---------- TOP BUTTON ---------- */
+
+footer a[href="#top"],
+footer a[href="#home"],
+footer a[href*="#home"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 18px !important;
+  border: 1px solid rgba(20,190,230,.22) !important;
+  border-radius: 999px !important;
+  transition: all .25s ease !important;
+}
+
+footer a[href="#top"]:hover,
+footer a[href="#home"]:hover,
+footer a[href*="#home"]:hover {
+  transform: translateY(-3px) !important;
+  background: rgba(20,200,240,.08) !important;
+}
+
+/* ---------- REMOVE EMPTY / DECORATIVE OVERFLOW ---------- */
+
+.method-card img[src=""],
+.process-card img[src=""],
+.skill-item img[src=""] {
+  display: none !important;
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 900px) {
+  .method-card,
+  .process-card,
+  .method-item {
+    min-height: 220px !important;
+    padding: 25px !important;
+  }
+
+  .project-image,
+  .project-image img {
+    min-height: 320px !important;
+  }
+
+  .project-content h3 {
+    font-size: clamp(38px, 8vw, 60px) !important;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+  .section-heading {
+    margin-bottom: 35px !important;
+  }
+
+  .method-card,
+  .process-card,
+  .method-item {
+    min-height: 190px !important;
+    padding: 22px !important;
+  }
+
+  .method-card::before,
+  .process-card::before,
+  .method-item::before {
+    top: 20px !important;
+    left: 20px !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 13px !important;
+    font-size: 18px !important;
+  }
+
+  .skill-item {
+    min-height: 155px !important;
+    padding: 20px !important;
+  }
+
+  .project {
+    margin-bottom: 55px !important;
+  }
+
+  .project-image,
+  .project-image img {
+    min-height: 245px !important;
+  }
+
+  .project-content h3 {
+    font-size: 40px !important;
+  }
+
+  .project-content p {
+    font-size: 15px !important;
+  }
+
+  footer {
+    padding-top: 45px !important;
+  }
+}
+
+
+/* =========================================================
+   SAQLAIN MUSHTAQ — FINAL CLEANUP
+   ========================================================= */
+
+/* ===== BROKEN PROFILE IMAGE FALLBACK ===== */
+
+.portrait-frame {
+  position: relative !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(25,210,245,.30), transparent 30%),
+    linear-gradient(145deg,#07131e,#101b29) !important;
+}
+
+.portrait-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.portrait-frame img[src="/profile.webp"] {
+  background: transparent !important;
+}
+
+/* ===== PROJECT IMAGES ===== */
+
+.projects-list .project-image {
+  background: #edf3f7 !important;
+  min-height: 380px !important;
+  aspect-ratio: 16 / 10 !important;
+  overflow: hidden !important;
+}
+
+.projects-list .project-image img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* ===== SKILLS: REMOVE ALL BROKEN DECORATION ===== */
+
+#skills .skill-item {
+  position: relative !important;
+  min-height: 175px !important;
+  padding: 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  overflow: hidden !important;
+}
+
+#skills .skill-item > * {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+#skills .skill-item::before {
+  content: "✦" !important;
+  position: absolute !important;
+  z-index: 1 !important;
+  top: 24px !important;
+  left: 26px !important;
+  width: 52px !important;
+  height: 52px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 15px !important;
+  background: linear-gradient(135deg,#20d4f4,#bdefff) !important;
+  color: #07141c !important;
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  box-shadow: 0 12px 28px rgba(20,190,230,.18) !important;
+}
+
+#skills .skill-item:nth-child(1)::before { content:"⚛" !important; }
+#skills .skill-item:nth-child(2)::before { content:"JS" !important; font-size:15px !important; }
+#skills .skill-item:nth-child(3)::before { content:"TS" !important; font-size:15px !important; }
+#skills .skill-item:nth-child(4)::before { content:"H5" !important; font-size:14px !important; }
+#skills .skill-item:nth-child(5)::before { content:"CSS" !important; font-size:12px !important; }
+#skills .skill-item:nth-child(6)::before { content:"PY" !important; font-size:13px !important; }
+#skills .skill-item:nth-child(7)::before { content:"AI" !important; font-size:15px !important; }
+#skills .skill-item:nth-child(8)::before { content:"ML" !important; font-size:13px !important; }
+#skills .skill-item:nth-child(9)::before { content:"Git" !important; font-size:12px !important; }
+#skills .skill-item:nth-child(10)::before { content:"VS" !important; font-size:14px !important; }
+#skills .skill-item:nth-child(11)::before { content:"DB" !important; font-size:13px !important; }
+
+/* kill old slash/decorative text */
+#skills .skill-item > span:first-child {
+  display: none !important;
+}
+
+/* clean typography */
+#skills .skill-item h3 {
+  margin: 0 0 8px !important;
+  font-size: 21px !important;
+  line-height: 1.15 !important;
+}
+
+#skills .skill-item .skill-category {
+  margin: 0 !important;
+  font-size: 11px !important;
+  letter-spacing: .12em !important;
+  opacity: .65 !important;
+}
+
+/* ===== METHOD CARDS ===== */
+
+#method .method-card,
+#method .process-card,
+#method .method-item,
+.method-section .method-card,
+.method-section .process-card,
+.method-section .method-item {
+  position: relative !important;
+  min-height: 220px !important;
+  padding: 30px !important;
+  overflow: hidden !important;
+}
+
+/* visual numbered/icon area */
+#method .method-card::before,
+#method .process-card::before,
+#method .method-item::before,
+.method-section .method-card::before,
+.method-section .process-card::before,
+.method-section .method-item::before {
+  content: "01" !important;
+  position: absolute !important;
+  top: 26px !important;
+  left: 28px !important;
+  width: 55px !important;
+  height: 55px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 15px !important;
+  background: linear-gradient(135deg,#e4fbff,#dceaff) !important;
+  color: #10c5e9 !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+}
+
+#method .method-card:nth-child(2)::before,
+#method .process-card:nth-child(2)::before,
+#method .method-item:nth-child(2)::before,
+.method-section .method-card:nth-child(2)::before,
+.method-section .process-card:nth-child(2)::before,
+.method-section .method-item:nth-child(2)::before {
+  content: "02" !important;
+}
+
+#method .method-card:nth-child(3)::before,
+#method .process-card:nth-child(3)::before,
+#method .method-item:nth-child(3)::before,
+.method-section .method-card:nth-child(3)::before,
+.method-section .process-card:nth-child(3)::before,
+.method-section .method-item:nth-child(3)::before {
+  content: "03" !important;
+}
+
+#method .method-card:nth-child(4)::before,
+#method .process-card:nth-child(4)::before,
+#method .method-item:nth-child(4)::before,
+.method-section .method-card:nth-child(4)::before,
+.method-section .process-card:nth-child(4)::before,
+.method-section .method-item:nth-child(4)::before {
+  content: "✦" !important;
+}
+
+#method .method-card:nth-child(5)::before,
+#method .process-card:nth-child(5)::before,
+#method .method-item:nth-child(5)::before,
+.method-section .method-card:nth-child(5)::before,
+.method-section .process-card:nth-child(5)::before,
+.method-section .method-item:nth-child(5)::before {
+  content: "✓" !important;
+}
+
+#method .method-card:nth-child(6)::before,
+#method .process-card:nth-child(6)::before,
+#method .method-item:nth-child(6)::before,
+.method-section .method-card:nth-child(6)::before,
+.method-section .process-card:nth-child(6)::before,
+.method-section .method-item:nth-child(6)::before {
+  content: "↗" !important;
+}
+
+/* ===== FOOTER CLEAN ===== */
+
+footer a[href="https://github.com/"],
+footer a[href="https://linkedin.com/"],
+footer a[href="https://github.com"],
+footer a[href="https://linkedin.com"] {
+  display: none !important;
+}
+
+footer a[href*="linkedin.com/in/"],
+footer a[href*="github.com/Saqlainkhan12"],
+footer a[href*="wa.me/"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 10px 15px !important;
+  border: 1px solid rgba(15,200,235,.22) !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  transition: .25s ease !important;
+}
+
+footer a[href*="linkedin.com/in/"]::before {
+  content: "in" !important;
+  font-weight: 900 !important;
+}
+
+footer a[href*="github.com/Saqlainkhan12"]::before {
+  content: "●" !important;
+}
+
+footer a[href*="wa.me/"]::before {
+  content: "✆" !important;
+}
+
+footer a[href*="linkedin.com/in/"]:hover,
+footer a[href*="github.com/Saqlainkhan12"]:hover,
+footer a[href*="wa.me/"]:hover {
+  transform: translateY(-3px) !important;
+  border-color: #16c9ed !important;
+  background: rgba(20,200,240,.08) !important;
+}
+
+/* ===== REMOVE UNNECESSARY EMPTY HEIGHT ===== */
+
+.projects-section,
+.skills-section,
+.method-section {
+  min-height: auto !important;
+}
+
+.projects-list {
+  gap: 65px !important;
+}
+
+#skills .skills-grid,
+#skills .skill-grid {
+  row-gap: 18px !important;
+}
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 650px) {
+
+  #skills .skill-item {
+    min-height: 145px !important;
+    padding: 20px !important;
+  }
+
+  #skills .skill-item::before {
+    top: 18px !important;
+    left: 20px !important;
+    width: 43px !important;
+    height: 43px !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+  }
+
+  #skills .skill-item h3 {
+    font-size: 18px !important;
+  }
+
+  .projects-list .project-image {
+    min-height: 240px !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+
+  #method .method-card,
+  #method .process-card,
+  #method .method-item {
+    min-height: 175px !important;
+    padding: 22px !important;
+  }
+
+  #method .method-card::before,
+  #method .process-card::before,
+  #method .method-item::before {
+    top: 18px !important;
+    left: 20px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  footer a[href*="linkedin.com/in/"],
+  footer a[href*="github.com/Saqlainkhan12"],
+  footer a[href*="wa.me/"] {
+    padding: 8px 11px !important;
+    font-size: 11px !important;
+  }
+}
+

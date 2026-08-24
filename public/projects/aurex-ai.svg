@@ -1,0 +1,17 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+<rect width="1200" height="750" rx="35" fill="#081321"/>
+<circle cx="950" cy="170" r="180" fill="#19d3ee" opacity=".10"/>
+<circle cx="250" cy="600" r="220" fill="#776cff" opacity=".10"/>
+<text x="80" y="120" fill="#55e5f5" font-family="Arial" font-size="22" font-weight="700">AI MARKET INTELLIGENCE</text>
+<text x="80" y="205" fill="white" font-family="Arial" font-size="72" font-weight="700">AUREX</text>
+<rect x="80" y="260" width="300" height="150" rx="20" fill="#ffffff" fill-opacity=".08"/>
+<rect x="410" y="260" width="300" height="150" rx="20" fill="#ffffff" fill-opacity=".08"/>
+<rect x="740" y="260" width="380" height="150" rx="20" fill="#ffffff" fill-opacity=".08"/>
+<text x="110" y="310" fill="#8fa6bd" font-family="Arial" font-size="18">AI MARKET SCORE</text>
+<text x="110" y="370" fill="#55e5f5" font-family="Arial" font-size="42" font-weight="700">92.4</text>
+<text x="440" y="310" fill="#8fa6bd" font-family="Arial" font-size="18">SIGNAL</text>
+<text x="440" y="370" fill="white" font-family="Arial" font-size="38" font-weight="700">BULLISH</text>
+<text x="770" y="310" fill="#8fa6bd" font-family="Arial" font-size="18">INTELLIGENCE</text>
+<text x="770" y="370" fill="white" font-family="Arial" font-size="32" font-weight="700">LIVE ANALYSIS</text>
+<path d="M80 570 C230 480 330 590 460 510 S680 560 820 450 S990 480 1120 350" fill="none" stroke="#35d8ed" stroke-width="8"/>
+</svg>
